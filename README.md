@@ -9,45 +9,52 @@ Ce projet est une démonstration pratique de l'implémentation de **Swagger UI**
 - **L5-Swagger** (Package d'intégration OpenAPI)
 - **OpenAPI / Swagger** (Spécifications de documentation)
 
-## 📦 Étape 1 : Installation
-Pour installer le package dans votre projet Laravel, exécutez la commande suivante :
-```bash
+## 1. Installation
+
+Exécutez la commande suivante pour ajouter le package au projet :
+
 composer require "darkaonline/l5-swagger"
-```
 
-## ⚙️ Étape 2 : Configuration
-1. **Publier le fichier de configuration :**
-```bash
+## 2. Configuration
+
+### Publication des fichiers
+Cette commande permet d'extraire le fichier de configuration vers le répertoire config/ de Laravel :
+
 php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
-```
 
-2. **Activer la génération automatique dans le `.env` :**
-Ajoutez cette ligne pour que votre documentation se mette à jour à chaque modification :
-```env
+### Paramétrage de l'environnement
+Ajoutez la ligne suivante dans votre fichier .env pour automatiser la mise à jour de la documentation :
+
 L5_SWAGGER_GENERATE_ALWAYS=true
-```
 
-## 📝 Exemple d'Annotation (@OA)
-Voici comment nous déclarons les informations de base de l'API dans le contrôleur principal :
+## 3. Définition des métadonnées (Annotations)
 
-```php
+Le bloc suivant doit être placé au-dessus de la classe dans app/Http/Controllers/Controller.php pour identifier l'API :
+
 /**
  * @OA\Info(
- * title="Mon API PortElite",
+ * title="Nom du Projet",
  * version="1.0.0",
- * description="Documentation interactive des ressources de l'API"
+ * description="Description technique de l'API"
  * )
  */
-```
 
-## 🚀 Utilisation
-Une fois configuré, accédez à votre documentation via l'URL :
-`http://localhost:8000/api/documentation`
+### Explication des termes :
+- @OA\Info : Déclare les informations globales de l'API.
+- title : Définit le nom affiché sur l'interface Swagger.
+- version : Indique le numéro de version actuel du développement.
+- description : Fournit un résumé des fonctionnalités disponibles.
 
-Pour forcer la génération manuelle des fichiers JSON :
-```bash
+## 4. Génération et Visualisation
+
+### Commande de génération
+Si la génération automatique n'est pas active, utilisez cette commande pour compiler les annotations :
+
 php artisan l5-swagger:generate
-```
+
+### Accès à l'interface
+Une fois le serveur lancé, la documentation est consultable à l'adresse :
+http://localhost:8000/api/documentation
 
 ---
  *Développé par Aya Nakkabi et Ilyas Doughmi dans le cadre de la formation YouCode.*
