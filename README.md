@@ -70,20 +70,21 @@ composer require darkaonline/l5-swagger
 ### Step 2: Publish Configuration
 ```bash
 php artisan vendor:publish --provider "L5Swagger\L5SwaggerServiceProvider"
-```
 
 ### Step 3: Enable Auto-Generation (Optional but recommended)
 Add to your `.env` file:
 ```env
 L5_SWAGGER_GENERATE_ALWAYS=true
-```
 
 This makes Swagger regenerate every time you refresh the page, perfect for live coding!
 
 ### Step 4: Generate Swagger Documentation
 ```bash
 php artisan l5-swagger:generate
-```
+
+### Accès à l'interface
+Une fois le serveur lancé, la documentation est consultable à l'adresse :
+http://localhost:8000/api/documentation
 
 ### Step 5: Run Migrations & Seed Data
 ```bash
