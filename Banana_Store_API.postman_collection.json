@@ -1,0 +1,107 @@
+{
+  "info": {
+    "name": "Banana Store API",
+    "description": "Complete CRUD API for Banana Store",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Bananas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/bananas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "bananas"]
+        },
+        "description": "Get all bananas from the database"
+      },
+      "response": []
+    },
+    {
+      "name": "Create Banana",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Yellow Banana\",\n  \"description\": \"Fresh yellow bananas from Ecuador\",\n  \"price\": 0.50,\n  \"quantity\": 100\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/bananas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "bananas"]
+        },
+        "description": "Create a new banana"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Single Banana",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/bananas/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "bananas", "1"]
+        },
+        "description": "Get a specific banana by ID"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Banana",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Golden Banana\",\n  \"description\": \"Premium golden bananas\",\n  \"price\": 0.75,\n  \"quantity\": 150\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/api/bananas/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "bananas", "1"]
+        },
+        "description": "Update an existing banana"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Banana",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/api/bananas/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8000",
+          "path": ["api", "bananas", "1"]
+        },
+        "description": "Delete a banana by ID"
+      },
+      "response": []
+    }
+  ]
+}
